@@ -32,15 +32,13 @@ class SideDrawerMenu extends Component {
 				onRequestChange={this.props.onToggleDrawer} >
 
 				<AppBar title="Dashboard"
-					style={{backgroundColor: "#FFF", height: "48px"}} 
-					titleStyle={{color: "#767676", height: "48px", fontSize: "22px", lineHeight: "48px"}} 
+					style={{backgroundColor: "#FFF"}} 
+					titleStyle={{color: "#767676"}} 
 					iconElementLeft={<Logo />}
-					iconStyleLeft={{marginTop: "8px", marginLeft: "0px"}} 
-					iconStyleRight={{marginTop: "0px"}} />
+					iconStyleLeft={{marginTop: "13px", marginLeft: "0px"}} />
 
 				<Menu desktop={true} 
-					listStyle={{width: "260px", paddingTop:"8px", paddingBottom:"8px", backgroundColor:"#FAFAFA"}}
-					autoWidth={false}>
+					listStyle={{backgroundColor:"#FAFAFA"}}>
 
 					<MenuItem leftIcon={<Home />} 
 						containerElement={<Link to="/" />} 

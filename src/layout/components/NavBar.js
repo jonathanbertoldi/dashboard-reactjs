@@ -17,7 +17,7 @@ class NavBar extends Component {
 	componentWillMount() {
 		const mql = window.matchMedia(`(min-width: 1000px)`);
 		mql.addListener(this.mediaQueryChanged.bind(this));
-		this.setState({mql: mql, docked: mql.matches});
+		this.setState({mql: mql, open: mql.matches, docked: mql.matches});
 	}
 
 	componentWillUnmount() {
@@ -40,11 +40,7 @@ class NavBar extends Component {
 			<div>
 				<AppBar title="Dashboard" 
 					onLeftIconButtonTouchTap={this.toggleDrawer.bind(this)}
-					style={{height: "48px"}} 
-					titleStyle={{height: "48px", fontSize: "22px", lineHeight: "48px"}} 
-					iconStyleLeft={{marginTop: "0px"}} 
-					iconElementRight={<NavBarMenu />} 
-					iconStyleRight={{marginTop: "0px"}} />
+					iconElementRight={<NavBarMenu />}  />
 
 				<SideDrawerMenu open={this.state.open}
 					docked={this.state.docked}
