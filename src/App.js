@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
-import './App.css';
 
 import Layout from './layout/default';
+import Home from './routes/home/Home'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -13,7 +13,7 @@ class App extends Component {
     return (
         <Router history={browserHistory}>
           <Route path="/" component={Layout}>
-            <IndexRoute/>
+            <IndexRoute component={Home} />
           </Route>
         </Router>
     );

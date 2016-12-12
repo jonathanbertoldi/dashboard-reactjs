@@ -11,10 +11,13 @@ class NavBarMenu extends Component {
 			<IconMenu iconButtonElement={<IconButton><MoreVertIcon color={white}/></IconButton>} 
 				targetOrigin={{horizontal: 'right', vertical: 'top'}}
     			anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-    		>
+    			desktop={true}
+    			listStyle={{width: "40px", paddingTop:"8px", paddingBottom:"8px", backgroundColor:"#FAFAFA"}} >
+
     			<MenuItem primaryText="Atualizar" />
 			    <MenuItem primaryText="Sobre" />
 			    <MenuItem primaryText="Sair" />
+
     		</IconMenu>
 		);
 	}
