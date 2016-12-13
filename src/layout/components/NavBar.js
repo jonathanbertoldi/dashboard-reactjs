@@ -41,7 +41,7 @@ class NavBar extends Component {
 				<AppBar title="Dashboard" 
 					onLeftIconButtonTouchTap={this.toggleDrawer.bind(this)}
 					iconElementRight={<NavBarMenu />}  />
-
+				
 				<SideDrawerMenu open={this.state.open}
 					docked={this.state.docked}
 					onToggleDrawer={this.toggleDrawer.bind(this)} />

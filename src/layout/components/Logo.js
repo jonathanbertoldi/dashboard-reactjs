@@ -5,7 +5,7 @@ import LogoSVG from './logo.svg';
 class Logo extends Component {
 	render() {
 		return (
-			<img src={LogoSVG} alt="Dashboard logo" />
+			<img style={this.props.style} src={LogoSVG} alt="Dashboard logo" />
 		);
 	}
 }

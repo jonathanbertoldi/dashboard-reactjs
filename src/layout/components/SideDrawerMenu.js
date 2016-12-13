@@ -38,14 +38,15 @@ class SideDrawerMenu extends Component {
 					iconStyleLeft={{marginTop: "13px", marginLeft: "0px"}} />
 
 				<Menu desktop={true} 
-					listStyle={{backgroundColor:"#FAFAFA"}}>
+					autoWidth={false}
+					listStyle={{width: "260px", backgroundColor:"#FAFAFA"}}>
 
 					<MenuItem leftIcon={<Home />} 
 						containerElement={<Link to="/" />} 
 						onTouchTap={this.props.onToggleDrawer}>Home</MenuItem>
 
 				</Menu>
-					<Divider />
+				<Divider />
 
 			</Drawer>
 		);
