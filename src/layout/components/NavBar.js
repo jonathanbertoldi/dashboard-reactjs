@@ -10,7 +10,9 @@ class NavBar extends Component {
 		super(props);
 		this.state = {
 			open: true,
-			docked: false
+			docked: false,
+			titleStyleColor: "#FFF",
+			titleBackgroundColor: "#03A9F4"
 		};
 	}
 
@@ -18,6 +20,11 @@ class NavBar extends Component {
 		const mql = window.matchMedia(`(min-width: 1000px)`);
 		mql.addListener(this.mediaQueryChanged.bind(this));
 		this.setState({mql: mql, open: mql.matches, docked: mql.matches});
+		if (this.state.open) {
+			this.setState({titleBackgroundColor: "#03A9F4", titleStyleColor: "#FFF"});
+		} else {
+			this.setState({titleBackgroundColor: "#FFF", titleStyleColor: "#6F797E"});
+		}
 	}
 
 	componentWillUnmount() {
@@ -27,6 +34,11 @@ class NavBar extends Component {
 	mediaQueryChanged() {
     	this.setState({docked: this.state.mql.matches});
     	this.setState({open: this.state.mql.matches});
+		if (this.state.open) {
+			this.setState({titleBackgroundColor: "#03A9F4", titleStyleColor: "#FFF"});
+		} else {
+			this.setState({titleBackgroundColor: "#FFF", titleStyleColor: "#6F797E"});
+		}
   	}
 
 	// Toggle function (open/close)
@@ -44,6 +56,8 @@ class NavBar extends Component {
 				
 				<SideDrawerMenu open={this.state.open}
 					docked={this.state.docked}
+					titleBackgroundColor={this.state.titleBackgroundColor}
+					titleStyleColor={this.state.titleStyleColor}
 					onToggleDrawer={this.toggleDrawer.bind(this)} />
 			</div>
 		);

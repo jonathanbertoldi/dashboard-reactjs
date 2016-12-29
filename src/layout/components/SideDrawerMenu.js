@@ -32,8 +32,8 @@ class SideDrawerMenu extends Component {
 				onRequestChange={this.props.onToggleDrawer} >
 
 				<AppBar title="Dashboard"
-					style={{backgroundColor: "#FFF"}} 
-					titleStyle={{color: "#767676"}} 
+					style={{backgroundColor: this.props.titleBackgroundColor}} 
+					titleStyle={{color: this.props.titleStyleColor}} 
 					iconElementLeft={<Logo />}
 					iconStyleLeft={{marginTop: "13px", marginLeft: "0px"}} />
 
