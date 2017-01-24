@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {browserHistory} from 'react-router';
+
 import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import MenuItem from 'material-ui/MenuItem';
@@ -11,9 +13,12 @@ import Logo from './Logo';
 
 class NavBarMenu extends Component {
 
-	state = {
-		open: false,
-	};
+	constructor(props) {
+		super(props);
+		this.state = {
+			open: false,
+		};
+	}
 
 	handleOpen = () => {
 		this.setState({open: true});
@@ -22,6 +27,10 @@ class NavBarMenu extends Component {
 	handleClose = () => {
 		this.setState({open: false});
 	};
+
+	signOut(){
+		browserHistory.push("/");
+	}
 
 	render() {
 
@@ -34,7 +43,7 @@ class NavBarMenu extends Component {
 
 		return (
 			<div>
-				<Dialog title="Sobre"
+				<Dialog title="About"
 						actions={actions}
 						modal={false}
 						open={this.state.open}
@@ -48,9 +57,9 @@ class NavBarMenu extends Component {
 						</div>
 						<div>
 							<h4>REACTJS DASHBOARD</h4>
-							<p><b>Autor: </b>Jonathan Bertoldi</p>
-							<p><b>Versão: </b>0.1</p>
-							<p><b>2016</b></p>
+							<p><b>Author: </b>Jonathan Bertoldi</p>
+							<p><b>Version: </b>0.1</p>
+							<p><b>2017</b></p>
 						</div>
 					</div>
 
@@ -60,8 +69,8 @@ class NavBarMenu extends Component {
 					anchorOrigin={{horizontal: 'right', vertical: 'top'}}
 					desktop={true} >
 
-					<MenuItem primaryText="Sobre" onTouchTap={this.handleOpen} />
-					<MenuItem primaryText="Sair" />
+					<MenuItem primaryText="About" onTouchTap={this.handleOpen} />
+					<MenuItem primaryText="Sign out" onTouchTap={this.signOut.bind(this)} />
 				</IconMenu>
 				
 			</div>
